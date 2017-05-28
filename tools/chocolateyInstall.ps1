@@ -24,7 +24,8 @@ $actualSha256 = (Get-FileHash $artifactPath -Algorithm SHA256).Hash
 if ($sha256 -ne $actualSha256) {
     throw "$url downloaded to $artifactPath did not match the expected $sha256 hash"
 }
-Expand-Archive $artifactPath -DestinationPath $tempPath
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+[IO.Compression.ZipFile]::ExtractToDirectory($artifactPath, $tempPath)
 
 Copy-Item "$tempPath\UnlimitedJCEPolicyJDK8\*.jar" $installPath
 
