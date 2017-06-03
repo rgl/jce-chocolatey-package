@@ -13,7 +13,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>**CAVEAT:** you **MUST** re-install this package everytime you upgrade JRE or JDK</description>
     <summary>Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files</summary>
-    <tags>java jre jce</tags>
+    <tags>admin java jre jce</tags>
     <dependencies>
       <dependency id="jre8" version="8.0" />
     </dependencies>
